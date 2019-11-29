@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/ng-packagr/package.schema.json",
   "name": "@ngxs-labs/attach-action",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ngxs-labs/attach-action.git"
@@ -25,7 +25,7 @@
   "ngPackage": {
     "lib": {
       "flatModuleFile": "ngxs-labs-attach-action",
-      "entryFile": "index.ts",
+      "entryFile": "./public-api.ts",
       "umdModuleIds": {
         "@ngxs/store": "ngxs-store"
       }

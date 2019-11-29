@@ -9,7 +9,7 @@
     "importHelpers": true
   },
   "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "attach-action/**/*.spec.ts",
+    "attach-action/**/*.d.ts"
   ]
 }

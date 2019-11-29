@@ -6,6 +6,12 @@
     "url": "git+https://github.com/ngxs-labs/attach-action.git"
   },
   "license": "MIT",
+  "contributors": [
+    {
+      "name": "David Leitner",
+      "email": "david@leitner.io"
+    }
+  ],
   "scripts": {
     "start-test": "start-server-and-test",
     "ng": "ng",
@@ -33,7 +39,7 @@
     "e2e:ssr": "start-test serve:integration:ssr 4200 cy:open:ssr",
     "e2e:chromium": "start-test serve:integration 4200 cy:run:chromium",
     "// - CI": "CI Testing",
-    "test:ci": "ng test --project attach-action --colors --runInBand",
+    "test:ci": "ng test --project attach-action",
     "test:ci:e2e": "yarn start-test serve:integration:static 4200 cy:run",
     "test:ci:integration": "yarn build:integration",
     "test:ci:integration:ssr": "yarn build:integration:ssr && yarn start-test serve:integration:ssr 4200 cy:run:ssr",
@@ -71,6 +77,13 @@
     "core-js": "^3.2.1",
     "cypress": "^3.4.1",
     "husky": "^3.0.4",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.5",
     "ng-packagr": "^5.5.0",
@@ -109,5 +122,8 @@
     "bracketSpacing": true,
     "arrowParens": "avoid",
     "singleQuote": true
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
   }
 }

@@ -16,8 +16,8 @@ install:
   - yarn --pure-lockfile --non-interactive
 
 script:
-  - yarn skeleton:lint
-  - yarn skeleton:build
+  - yarn attach-action:lint
+  - yarn attach-action:build
   - yarn test:ci
   - yarn test:ci:integration
   - yarn test:ci:integration:ssr
