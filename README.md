@@ -4,7 +4,7 @@
 
 ---
 
-> Define Action Handlers in Seperate Files
+> ⚡️ Attach independent, pure and easy to test Action Handlers to NGXS States.
 
 [![Build Status](https://travis-ci.com/ngxs-labs/attach-action.svg?branch=master)](https://travis-ci.com/ngxs-labs/attach-action)
 [![NPM](https://badge.fury.io/js/%40ngxs-labs%2Fattach-action.svg)](https://www.npmjs.com/package/@ngxs-labs/attach-action)
