@@ -50,10 +50,10 @@ The responsibility of the state-class itself is just to group und bootstrap all 
 @State<ShopStateModel>({ name: 'shop', defaults: DEFAULT_SHOP_STATE })
 export class ShopState {
   constructor(productService: ProductService) {
-    declareAction(ShopState, AddProductToCartAction, addProductToCart);
-    declareAction(ShopState, FetchProductsAction, fetchProducts(productService));
-    declareAction(ShopState, AnotherAction, ...);
-    declareAction(ShopState, [ActionA, ActionB], ...);
+    attachAction(ShopState, AddProductToCartAction, addProductToCart);
+    attachAction(ShopState, FetchProductsAction, fetchProducts(productService));
+    attachAction(ShopState, AnotherAction, ...);
+    attachAction(ShopState, [ActionA, ActionB], ...);
   }
 }
 ``` 
