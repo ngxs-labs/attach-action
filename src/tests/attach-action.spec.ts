@@ -1,5 +1,5 @@
-import { Actions, NgxsModule, ofActionDispatched, State, StateContext, Store } from '@ngxs/store';
 import { TestBed } from '@angular/core/testing';
+import { Actions, NgxsModule, ofActionDispatched, State, StateContext, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { attachAction } from '../lib/attach-action';
 
