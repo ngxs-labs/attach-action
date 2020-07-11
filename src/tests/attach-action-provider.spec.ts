@@ -76,11 +76,11 @@ describe('attach-action-provider', () => {
   it('should mutate state with provided action', () => {
     const mutationValue = 'mutation_value';
     const secondMutationValue = 'second_mutation_value';
-    //First
+    // First
     store.dispatch(new ProvidedAction(mutationValue));
     let storeSnapshote: StoreModel = store.selectSnapshot(s => s.testStore);
     expect(storeSnapshote.mutationProvidedAction).toBe(mutationValue);
-    //Second
+    // Second
     store.dispatch(new SecondProvidedAction(secondMutationValue));
     storeSnapshote = store.selectSnapshot(s => s.testStore);
     expect(storeSnapshote.mutationProvidedAction).toBe(secondMutationValue);
