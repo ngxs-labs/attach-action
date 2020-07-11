@@ -32,9 +32,6 @@ const attachToStoreClass = (
   provider: any,
   action: ActionHandlerMetaData
 ): void => {
-  if (Object.getOwnPropertyNames(storeClass.prototype).includes(action.fn.toString())) {
-    throw Error(`Duplicate method ${action.fn.toString()} between ${storeClass} and ${provider}`);
-  }
   Action({ type: action.type }, action.options)({ constructor: storeClass }, action.fn.toString());
   const delegateDescriptor = createDelegateDescriptor(provider, action);
   Object.defineProperty(storeClass.prototype, action.fn, delegateDescriptor);
