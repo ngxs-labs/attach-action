@@ -125,7 +125,6 @@
     "singleQuote": true
   },
   "dependencies": {
-    "lodash": "^4.17.15",
     "tslib": "^1.10.0"
   }
 }

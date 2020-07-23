@@ -1,10 +1,7 @@
 import { Action, StateContext } from '@ngxs/store';
 import { ActionHandlerMetaData } from '@ngxs/store/src/actions/symbols';
 import { MetaDataModel } from '@ngxs/store/src/internal/internals';
-import * as lodash from 'lodash';
-
-const META_KEY = 'NGXS_META';
-const META_OPTIONS_KEY = 'NGXS_OPTIONS_META';
+import { META_KEY, META_OPTIONS_KEY } from './const';
 
 export function attachActionProvider(storeClass: any, providers: any[]): void {
   if (!storeClass[META_OPTIONS_KEY]) {
@@ -24,8 +21,11 @@ const parseProvidedActions = (provider: any): ActionHandlerMetaData[] => {
     throw new Error('provider is not a valid NGXS Action Provider');
   }
   const actions: ActionHandlerMetaData[][] = Object.values(metaDataModel.actions);
-  return lodash.flattenDeep(actions);
+  return flattenDeep(actions);
 };
+
+const flattenDeep = (arr: any): any =>
+  Array.isArray(arr) ? arr.reduce((a, b) => a.concat(flattenDeep(b)), []) : [arr];
 
 const attachToStoreClass = (
   storeClass: any,
