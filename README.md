@@ -25,7 +25,7 @@ npm install @ngxs-labs/attach-action
 
 Especially large codebases can get the issue of ending up in sprawling and hard to test NGXS-state-classes. Breaking the state into smaller chunks is not always an option, especially when the data is very cohesive and the interaction between it is complex.
 
-Thus we wanted to move actions into independent, testable and simple to grasp files. For this purpose, a small helper function was introduced which allows the declaration of actions which are handled outside of the state class.
+Thus we wanted to move actions into independent, testable and simple to grasp files. For this purpose, small helper function were introduced which allows the declaration of actions which are handled outside of the state class.
 
 Following this approach brought us in the desirable condition to have all actions and usefully grouped selectors in separate classes. Our file structure in large enterprise applications therefore usually looks roughly like this:
 
@@ -54,10 +54,14 @@ export class ShopState {
     attachAction(ShopState, FetchProductsAction, fetchProducts(productService));
     attachAction(ShopState, AnotherAction, ...);
     attachAction(ShopState, [ActionA, ActionB], ...);
+    attachActionProvider(ShopState, [ActionProviderA, ActionProviderB]);
   }
 }
 ``` 
+There are two different configuration possibilities, provided by the `attachAction` and `attachActionProvider` functions:
 
+### `attachAction`
+ 
 The actions are just idiomatic (higher-order) functions: 
 ```typescript
 export const addProductToCart =
@@ -73,3 +77,21 @@ export const fetchProducts =
       });
     }
 ```
+
+### `attachActionProvider`
+
+The actions are declared with the use of the `@Action` decorator, grouped in classes. 
+These classes can be used in combination with Angular's dependency injection mechanism.
+
+```typescript
+class ActionProviderA {
+    @Action(ProvidedAction)
+    providedAction(StateContext<ShopStateModel>, act: ProvidedAction){
+        ...
+    }
+    ...
+}
+```
+
+
+

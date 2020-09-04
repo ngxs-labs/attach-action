@@ -3,17 +3,9 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
-    "typeRoots": [
-      "../node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ]
+    "typeRoots": ["../node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "types": ["cypress"]
   },
-  "include": [
-    "integration/*.ts",
-    "support/*.ts",
-    "../node_modules/cypress"
-  ]
+  "include": ["integration/*.ts", "support/*.ts", "../node_modules/cypress"]
 }

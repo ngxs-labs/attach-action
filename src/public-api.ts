@@ -1,5 +1,5 @@
 /*
- * Public API Surface of attach-action
+ * Public API
  */
-
 export * from './lib/attach-action';
+export * from './lib/attach-action-provider';
