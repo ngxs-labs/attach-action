@@ -27,7 +27,7 @@ Especially large codebases can get the issue of ending up in sprawling and hard 
 
 Thus we wanted to move actions into independent, testable and simple to grasp files. For this purpose, a small helper function was introduced which allows the declaration of actions which are handled outside of the state class.
 
-Following this approach brought us in the desirable condition to have all actions and usefully grouped selectors in separate classes. Our file structure in large enterprise applications therefore usually looks ruffly like this:
+Following this approach brought us in the desirable condition to have all actions and usefully grouped selectors in separate classes. Our file structure in large enterprise applications therefore usually looks roughly like this:
 
 ```
 /store
