@@ -1,10 +1,5 @@
 import { Action, ActionOptions, ActionType, StateContext } from '@ngxs/store';
-
-/**
- * This key is used to retrieve static metadatas on state classes.
- * This constant is taken from the core codebase
- */
-const META_OPTIONS_KEY = 'NGXS_OPTIONS_META';
+import { META_OPTIONS_KEY } from './const';
 
 export function attachAction<S, A>(
   storeClass: any,
